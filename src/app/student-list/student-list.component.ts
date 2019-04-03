@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 
-import { DataModelManagerService } from "./data-model-manager.service";
-import { student } from "./data-model-classes";
+import { DataModelManagerService } from "../data-model-manager.service";
+import { student } from "../data-model-classes";
 import { catchError, tap } from "rxjs/operators";
 
 
 @Component({
   selector: 'app-user-list',
-  templateUrl: './user-list.component.html',
-  styleUrls: ['./user-list.component.css']
+  templateUrl: './student-list.component.html',
+  styleUrls: ['./student-list.component.css']
 })
-export class UserListComponent implements OnInit {
+export class StudentListComponent  implements OnInit {
 
   // reqres.in web service data
   users: student[];

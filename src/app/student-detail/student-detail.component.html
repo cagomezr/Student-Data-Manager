@@ -1,6 +1,4 @@
-<p>
-    student-detail works!
-</p>
+
 <div class="container">
     <h3 >Student detail - {{ currStudent.givenName }} {{ currStudent.familyName }}, {{ currStudent.studentId }}  &nbsp;<a  class="btn btn-default" routerLink="/students" >Back to list</a></h3>
         <p >&nbsp;</p>
@@ -24,7 +22,15 @@
                             </thead>
                             <tbody >
                                 <!---->
-                                <tr >
+                                <tr *ngFor='let course of currStudent.coursesSaved'>
+                                    <td >{{course.term}}</td>
+                                    <td >{{ course.courseCode  }} - {{ course.section  }}</td>
+                                    <td > <!----><span *ngIf='course.classMon =="Y"'> Monday</span>
+                                          <!----><span *ngIf='course.classTue =="Y"'>Tuesday</span>
+                                          <!----><span *ngIf='course.classWed =="Y"'>Wednesday</span>
+                                          <!----><span *ngIf='course.classThu =="Y"'>Thursday</span>
+                                          <!----><span *ngIf='course.classFri =="Y"'>Friday</span><br/>
+                                          <!----><span>{{ course.classStart  }} to {{ course.classEnd  }}</span></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -40,7 +46,16 @@
                                 </tr>
                             </thead>
                             <tbody >
-                                <!---->
+                                 <tr *ngFor='let course of currStudent.coursesConfirmed'>
+                                    <td >{{course.term}}</td>
+                                    <td >{{ course.courseCode  }} - {{ course.section  }}</td>
+                                    <td > <!----><span *ngIf='course.classMon =="Y"'> Monday</span>
+                                          <!----><span *ngIf='course.classTue =="Y"'>Tuesday</span>
+                                          <!----><span *ngIf='course.classWed =="Y"'>Wednesday</span>
+                                          <!----><span *ngIf='course.classThu =="Y"'>Thursday</span>
+                                          <!----><span *ngIf='course.classFri =="Y"'>Friday</span><br/>
+                                          <!----><span>{{ course.classStart  }} to {{ course.classEnd  }}</span></td>
+                                </tr>
                             </tbody>
                         </table>
                     </dd>

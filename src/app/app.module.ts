@@ -9,8 +9,6 @@ import { AboutComponent } from './about.component';
 import { HomeComponent } from './home.component';
 import { HeaderNavComponent } from './header-nav.component';
 import { NotFoundComponent } from './not-found.component';
-import { FormElementsComponent } from './form-elements.component';
-import { UserListComponent } from './user-list.component';
 import { CourseListComponent } from './course-list/course-list.component';
 import { StudentDetailComponent } from './student-detail/student-detail.component';
 import { HelpComponentComponent } from './help-component/help-component.component';
@@ -18,6 +16,7 @@ import { CartComponentComponent } from './cart-component/cart-component.componen
 import { CartSelectedGridComponent } from './cart-selected-grid/cart-selected-grid.component';
 import { CartSelectedCellComponent } from './cart-selected-cell/cart-selected-cell.component';
 import { CartSelectedListComponent } from './cart-selected-list/cart-selected-list.component';
+import { StudentListComponent } from './student-list/student-list.component';
 
 
 @NgModule({
@@ -27,8 +26,6 @@ import { CartSelectedListComponent } from './cart-selected-list/cart-selected-li
     HomeComponent,
     HeaderNavComponent,
     NotFoundComponent,
-    FormElementsComponent,
-    UserListComponent,
     CourseListComponent,
     StudentDetailComponent,
     HelpComponentComponent,
@@ -36,6 +33,7 @@ import { CartSelectedListComponent } from './cart-selected-list/cart-selected-li
     CartSelectedGridComponent,
     CartSelectedCellComponent,
     CartSelectedListComponent,
+    StudentListComponent,
   ],
   imports: [
     BrowserModule,

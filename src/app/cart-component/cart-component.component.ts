@@ -44,9 +44,10 @@ courseMatch(): void {
   // the seconds data (e.g. 13:30:00 becomes 13:30)
   // (the professor-provided grid and list components)
             // depend on this cleanup
-              pcourse.classEnd=pcourse.classEnd.substr(0, pcourse.classEnd.length-3);
-              pcourse.classStart=pcourse.classStart.substr(0, pcourse.classStart.length-3);
-              
+              if((pcourse.classEnd!= undefined)&&(pcourse.classStart!= undefined)){
+                  pcourse.classEnd=pcourse.classEnd.substr(0, pcourse.classEnd.length-3);
+                  pcourse.classStart=pcourse.classStart.substr(0, pcourse.classStart.length-3);
+              }
               this.matchedCourses.push(pcourse);// Add course to the "courses matched" collection
           }
       }
@@ -87,18 +88,24 @@ taskSaveCart(): void {
     this.m.CartSystem= this.selectedCourses;
     //api call to saver cart
     this.m.CurrentStudent.coursesSaved = this.selectedCourses;
-    this.m.cartSaveSys(this.m.CurrentStudent._id, this.m.CurrentStudent).subscribe(u =>{ console.log(u)});
+    this.m.cartSaveSys(this.m.CurrentStudent._id, this.selectedCourses).subscribe(u =>{ console.log(u)});
 }
 taskClear(): void {
     this.m.CartSystem =[];
     this.selectedCourses=[];
     //api call to clear cart;
+    this.m.TimetableSaved=[];
+    this.m.cartConfirmSys(this.m.CurrentStudent._id, this.m.TimetableSaved).subscribe(u =>{ console.log(u)});
 }
 taskConfirmTimetable(): void {
     this.m.TimetableSaved = this.selectedCourses;
-      this.m.CartSystem =[];
+    this.m.CartSystem =[];
     this.selectedCourses=[];
+    this.m.cartConfirmSys(this.m.CurrentStudent._id, this.m.TimetableSaved).subscribe(u =>{ console.log(u)});
     //api call to save cart, update courses, and  user  ;
+    this.m.CartSystem =[];
+    this.selectedCourses=[];
+    this.m.TimetableSaved=[];
 }
 
 
@@ -112,7 +119,7 @@ taskConfirmTimetable(): void {
           console.log(this.m.CurrentStudent);
           this.currentStudentCart =   this.m.CurrentStudent;
           console.log(this.m.CurrentStudent);
-         this.m.courseGetByPId(this.currentStudentCart.academicProgram).subscribe(u => { this.possibleCourses = u;this.courseMatch(); } );
+         this.m.courseGetByPId(this.currentStudentCart.academicProgram).subscribe(u => { this.possibleCourses = u; this.selectedCourses = this.m.CurrentStudent.coursesSaved;this.courseMatch(); } );
       }
       
       

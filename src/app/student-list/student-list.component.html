@@ -17,7 +17,7 @@
     <tr *ngFor='let u of users'>
       <td>{{ u.studentId }}  {{u.academicProgram }}</td>
       <td>{{ u.givenName }} {{ u.familyName }}</td>
-      <td>{{u.birthDate}}</td>
+      <td>{{(u.birthDate| date :  "MMM dd,y")}}</td>
       <td>{{u.email}}</td>
       <td>{{u.academicLevel}}</td>
       <td>{{u.gpa}}</td>
@@ -30,5 +30,3 @@
     </tr>
   </tbody>
 </table>
-
-

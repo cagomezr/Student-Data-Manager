@@ -2,7 +2,7 @@
         <div class="col-md-7">
             <h3>Select courses - {{ currentStudentCart.givenName }} {{ currentStudentCart.familyName }}, {{ currentStudentCart.studentId }}&nbsp;<a class="btn btn-default" routerLink="/students/detail/{{ currentStudentCart._id }}" >Back to detail</a></h3>
         </div>
-        <div class="col-md-5"><span>Select courses, then save, or confirm your selections</span><br><button class="btn btn-default">Clear</button>&nbsp; <button class="btn btn-info" (click)="taskSaveCart()">Save for later</button>&nbsp; <button class="btn btn-primary">Confirm as your timetable</button>&nbsp; </div>
+        <div class="col-md-5"><span>Select courses, then save, or confirm your selections</span><br><button class="btn btn-default" (click)="taskClear()">Clear</button>&nbsp; <button class="btn btn-info" (click)="taskSaveCart()">Save for later</button>&nbsp; <button class="btn btn-primary" (click)="taskConfirmTimetable()">Confirm as your timetable</button>&nbsp; </div>
     </div>
     <hr>
     <div class="row">

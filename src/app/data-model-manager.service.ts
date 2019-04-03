@@ -17,8 +17,8 @@ export class DataModelManagerService {
   constructor(private http: HttpClient) { }
 
   // URL to the example reqres.in web service
-  //private urlReqres: string = "https://aqueous-lowlands-97253.herokuapp.com/api";
-  private urlReqres: string = "http://localhost:8080/api";
+  private urlReqres: string = "https://aqueous-lowlands-97253.herokuapp.com/api";
+  //private urlReqres: string = "http://localhost:8080/api";
 
   // Edit the base URL string to the web service
   private url: string = "https://host.example/com/api";
@@ -76,8 +76,15 @@ public TimetableSaved:course[] =[];
         catchError(this.handleError<student>('User edit'))
       );
   }
-  cartSaveSys(id: string, savedCart: student): Observable<any> {
+  cartSaveSys(id: string, savedCart: course[]): Observable<any> {
     return this.http.put<student>(`${this.urlReqres}/students/${id}/cart/save`, savedCart, this.httpOptions)
+      .pipe(
+        tap((newItem: student) => console.log(`Edited item ${id}`)),
+        catchError(this.handleError<student>('User edit'))
+      );
+  }
+  cartConfirmSys(id: string, savedCart: course[]): Observable<any> {
+    return this.http.put<student>(`${this.urlReqres}/students/${id}/cart/confirm`, savedCart, this.httpOptions)
       .pipe(
         tap((newItem: student) => console.log(`Edited item ${id}`)),
         catchError(this.handleError<student>('User edit'))
