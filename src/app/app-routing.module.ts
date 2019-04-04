@@ -9,6 +9,8 @@ import { StudentDetailComponent } from './student-detail/student-detail.componen
 import { HelpComponentComponent } from './help-component/help-component.component';
 import { CartComponentComponent } from './cart-component/cart-component.component';
 import { StudentListComponent } from './student-list/student-list.component';
+import { CourseDetailComponent } from './course-detail/course-detail.component';
+
 
 
 
@@ -20,7 +22,8 @@ const routes: Routes = [
   { path: 'cart', component: CartComponentComponent },
   { path: 'help', component: HelpComponentComponent },
   { path: 'students/detail/:id', component: StudentDetailComponent },
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'courses/detail/:id', component: CourseDetailComponent },  
+    { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', component: NotFoundComponent }
 ];
 

@@ -1,0 +1,27 @@
+
+<div class="container">
+    <h3 >Course details &nbsp;<a  class="btn btn-default" routerLink="/courses" >Back to list</a></h3>
+        <p >&nbsp;</p>
+        <!---->
+        <div  class="row">
+            <div  class="col-md-8 col-sm-12">
+                <dl  class="dl-horizontal">
+                    
+                   <dt>Course</dt> <dd>{{ currCourse.courseCode  }} - {{ currCourse.section  }}</dd>
+                           <dt>Term</dt><dd> {{ currCourse.term }}</dd>
+                            
+                            <dt>day and time</dt><dd>                                
+                                <!----><span *ngIf='currCourse.classMon =="Y"'> Monday</span>
+                                <!----><span *ngIf='currCourse.classTue =="Y"'>Tuesday</span>
+                                <!----><span *ngIf='currCourse.classWed =="Y"'>Wednesday</span>
+                                <!----><span *ngIf='currCourse.classThu =="Y"'>Thursday</span>
+                                <!----><span *ngIf='currCourse.classFri =="Y"'>Friday</span><br/>
+                                <!----><span>{{ currCourse.classStart  }} to {{ currCourse.classEnd  }}</span>
+                            </dd>
+                            <dt>Enroll Total</dt><dd>{{currCourse.enrolTotal}}</dd>
+                            <dt>Profersor</dt><dd>{{ currCourse.professor}}</dd>
+                </dl>
+                
+            </div>
+    </div>
+</div>

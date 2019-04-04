@@ -17,6 +17,7 @@ import { CartSelectedGridComponent } from './cart-selected-grid/cart-selected-gr
 import { CartSelectedCellComponent } from './cart-selected-cell/cart-selected-cell.component';
 import { CartSelectedListComponent } from './cart-selected-list/cart-selected-list.component';
 import { StudentListComponent } from './student-list/student-list.component';
+import { CourseDetailComponent } from './course-detail/course-detail.component';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { StudentListComponent } from './student-list/student-list.component';
     CartSelectedCellComponent,
     CartSelectedListComponent,
     StudentListComponent,
+    CourseDetailComponent,
   ],
   imports: [
     BrowserModule,

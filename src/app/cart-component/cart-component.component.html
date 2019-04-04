@@ -35,7 +35,7 @@
                             <td>{{course.enrolTotal}}</td>
                             <td>{{ course.professor  }}</td>
                             <td>
-                            <p style="display: none;">{{course._id}}</p>
+                            
                             <button  [ngClass]="['btn', isCourseSelected(course) ? 'btn-danger' : 'btn-success']" (click)="courseSelect(course)">+ / -</button>
 </td>
                         </tr>
